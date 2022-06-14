@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/48fa2c6b3f.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="images/paw.png">
+    <title>Entrenador de perros</title>
+    
+</head>
+<body>
+
+    <!-- HOME -->
+
+    <section>
+            <nav>
+                <a href=""><h2 class="logo">Entrenador de perros</h2></a>
+                <ul id="menu">
+                    <li><a href="index.html#home">INICIO</a></li>
+                    <li><a href="index.html#about-me">SOBRE MI</a></li>
+                    <li><a href="contact.html">CONTACTO</a></li>
+                </ul>
+            </nav>
+    </section>
+
+    <div class="contact-form">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h2>CONTACTANOS</h2>
+            <input type="text" id="name" placeholder="Escribe tu nombre">
+            <input type="email" id="email" placeholder="Escribe tu email">
+            <input type="text" id="phone" placeholder="Escribe tu numero de telefono">
+            <textarea id="msg" rows="4" placeholder="Como podemos ayudarte?"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <!-- FOOTER -->
+
+    <footer>
+        <div>
+            <a href="" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div>
+            <p>Entrenador de perros</p>
+            <p>Av. Coronel Olascoaga 547, Neuquén</p>
+            <p>Tel. +54 2994426560</p>
+        </div>
+    </footer>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "juans.nqnar@gmail.com",
+                Password : "aorusZoom",
+                To : 'juans.nqnar@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "lol",
+                Body : "Name: " + document.getElementById("name").value
+                + "<br> Email: " + document.getElementById("email").value
+                + "<br> Numero de telefono: " + document.getElementById("phone").value
+                + "<br> Mensaje: " + document.getElementById("msg").value
+            }).then(
+              message => alert("Mensaje enviado")
+            );
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
